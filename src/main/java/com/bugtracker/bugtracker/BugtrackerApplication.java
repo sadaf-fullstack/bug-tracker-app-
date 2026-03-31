@@ -10,3 +10,4 @@ public class BugtrackerApplication {
 		SpringApplication.run(BugtrackerApplication.class, args);
 	}
 }
+

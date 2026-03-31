@@ -1,7 +1,7 @@
 package com.bugtracker.bugtracker.entity;
 
 import jakarta.persistence.*;
-import java.time.LocalDateTime;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 public class Bug {
@@ -12,49 +12,62 @@ public class Bug {
 
     private String title;
     private String description;
+    private String status;
+    private String priority;
 
+    // ✅ IMPORTANT FIX
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonIgnoreProperties({"bugs"})   // 🔥 prevents error
     private User user;
 
-    @Enumerated(EnumType.STRING)
-    private Status status;
+    // GETTERS & SETTERS
 
-    @Enumerated(EnumType.STRING)
-    private Priority priority;
-
-    private LocalDateTime createdAt;
-
-    // AUTO TIMESTAMP
-    @PrePersist
-    public void prePersist() {
-        this.createdAt = LocalDateTime.now();
+    public Long getId() {
+        return id;
     }
 
-    // getters
-    public Long getId() { return id; }
+    public String getTitle() {
+        return title;
+    }
 
-    public String getTitle() { return title; }
+    public String getDescription() {
+        return description;
+    }
 
-    public String getDescription() { return description; }
+    public String getStatus() {
+        return status;
+    }
 
-    public Status getStatus() { return status; }
+    public String getPriority() {
+        return priority;
+    }
 
-    public Priority getPriority() { return priority; }
+    public User getUser() {
+        return user;
+    }
 
-    public LocalDateTime getCreatedAt() { return createdAt; }
-    public User getUser() { return user; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    // setters
-    public void setTitle(String title) { this.title = title; }
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-    public void setDescription(String description) { this.description = description; }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-    public void setStatus(Status status) { this.status = status; }
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
-    public void setPriority(Priority priority) { this.priority = priority; }
+    public void setPriority(String priority) {
+        this.priority = priority;
+    }
 
-    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
-
-    public void setUser(User user) { this.user = user; }
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

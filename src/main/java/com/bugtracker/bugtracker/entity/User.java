@@ -12,17 +12,14 @@ public class User {
     private Long id;
 
     private String name;
-
     private String email;
-
     private String password;
-
     private String role;
 
-    @OneToMany(mappedBy = "user")
+    // ✅ UPDATED (added cascade)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Bug> bugs;
-
     // GETTERS
 
     public Long getId() {
