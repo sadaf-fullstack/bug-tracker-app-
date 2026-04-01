@@ -22,3 +22,23 @@ Run Project
 
 API Testing
 - Use Postman to test APIs (GET, POST, PUT, DELETE)
+  
+API Execution Screenshots
+
+### Create User
+![Create User](src/main/java/com/bugtracker/screenshots/create-user.png)
+
+### Create Bug
+![Create Bug](src/main/java/com/bugtracker/screenshots/create-bug.png)
+
+### Assign User
+![Assign User](src/main/java/com/bugtracker/screenshots/assign-user.png)
+
+### Get Bugs
+![Get Bugs](src/main/java/com/bugtracker/screenshots/get-bugs.png)
+
+### Pagination
+![Pagination](src/main/java/com/bugtracker/screenshots/pagination.png)
+
+### Delete Bug
+![Delete Bug](src/main/java/com/bugtracker/screenshots/delete-bug.png)
