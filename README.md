@@ -31,6 +31,9 @@ API Execution Screenshots
 ### Create Bug
 ![Create Bug](src/main/java/com/bugtracker/screenshots/create-bug.png)
 
+### Update Bug
+![Update Bug](src/main/java/com/bugtracker/screenshots/update-bug.png)
+
 ### Assign User
 ![Assign User](src/main/java/com/bugtracker/screenshots/assign-user.png)
 
